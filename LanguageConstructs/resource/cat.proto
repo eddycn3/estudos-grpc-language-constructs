@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/struct.proto";
+
+package tutorial;
+
+option csharp_namespace = "MyExample.Cat";
+
+message Cat{
+	google.protobuf.Int32Value id=1;
+	string name=2;
+	NullableField profile_picture=3;
+}
+
+message NullableField{
+	oneof kind{
+		google.protobuf.NullValue null=1;
+		google.protobuf.StringValue value=2;
+	}
+}

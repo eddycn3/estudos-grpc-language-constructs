@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package tutorial;
+
+import "include/google/protobuf/any.proto";
+
+message ACat{
+	string name=1;
+	int32 age=2;
+	google.protobuf.Any care_giver=3;
+}
+
+message Owner{
+	int32 id=1;
+	string FirstName=2;
+	string LastName=3;
+}
+
+message Foster{
+	int32 id=1;
+	string Address=2;
+}
